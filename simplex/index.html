@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>프로그래밍 부트캠프</title>
+<meta charset="utf-8">
+<link rel="icon" href="images/favicon.ico">
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/camera.css">
+<link rel="stylesheet" href="css/form.css">
+<script src="js/jquery.js"></script>
+<script src="js/jquery-migrate-1.1.1.js"></script>
+<script src="js/superfish.js"></script>
+<script src="js/forms.js"></script>
+<script src="js/jquery.ui.totop.js"></script>
+<script src="js/jquery.equalheights.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/jquery.ui.totop.js"></script>
+<script src="js/tms-0.4.1.js"></script>
+<script>
+$(document).ready(function () {
+    $('.slider_wrapper')._TMS({
+        show: 0,
+        pauseOnHover: false,
+        prevBu: '.prev',
+        nextBu: '.next',
+        playBu: false,
+        duration: 800,
+        preset: 'fade',
+        pagination: true, //'.pagination',true,'<ul></ul>'
+        pagNums: false,
+        slideshow: 8000,
+        numStatus: false,
+        banners: 'fade',
+        waitBannerAnimation: false,
+        progressBar: false
+    });
+});
+$(document).ready(function () {
+    ! function () {
+        var map = [],
+            names = [],
+            win = $(window),
+            header = $('header'),
+            currClass
+            $('.content').each(function (n) {
+                map[n] = this.offsetTop
+                names[n] = $(this).attr('id')
+            })
+            win
+                .on('scroll', function () {
+                    var i = 0
+                    while (map[i++] <= win.scrollTop());
+                    if (currClass !== names[i - 2])
+                        currClass = names[i - 2]
+                    header.removeAttr("class").addClass(names[i - 2])
+                })
+    }();
+});
+function goToByScroll(id) {
+    $('html,body').animate({
+        scrollTop: $("#" + id).offset().top
+    }, 'slow');
+}
+$(document).ready(function () {
+    $().UItoTop({
+        easingType: 'easeOutQuart'
+    });
+});
+</script>
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<link rel="stylesheet" media="screen" href="css/ie.css">
+<![endif]-->
+</head>
+<body>
+<header class="page1">
+  <div class="container_12">
+    <div class="grid_12">
+      <h1><a href="#" onClick="goToByScroll('page1'); return false;"><img src="images/logo.png" alt=""></a></h1>
+      <div class="menu_block">
+        <nav class="">
+          <ul class="sf-menu">
+            <li class="current men"><a onClick="goToByScroll('page1'); return false;" href="#">Home </a> <strong class="hover"></strong></li>
+            <li class="men1"><a onClick="goToByScroll('page2'); return false;" href="#">About</a><strong class="hover"></strong></li>
+            <li class=" men2"><a onClick="goToByScroll('page3'); return false;" href="#">Services</a> <strong class="hover"></strong></li>
+            <li class=" men3"><a onClick="goToByScroll('page4'); return false;" href="#">Clients</a> <strong class="hover"></strong></li>
+            <li class=" men4"><a onClick="goToByScroll('page5'); return false;" href="#">Contacts</a> <strong class="hover"></strong></li>
+          </ul>
+        </nav>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</header>
+<div id="page1" class="content">
+  <div class="container_12">
+    <div class="grid_12">
+      <div class="slider_wrapper">
+        <ul class="items">
+          <li> <img src="images/spacer.gif" alt="">
+            <div class="caption banner">
+              <h2>Programming BootCamp</h2>
+            </div>
+          </li>
+          <li> <img src="images/spacer.gif" alt="">
+            <div class="caption banner">
+              <h2>HAJA Project Team Page</h2>
+            </div>
+          </li>
+          <li> <img src="images/spacer.gif" alt="">
+            <div class="caption banner">
+              <h2>GUI Processing 이용한 프로그래밍</h2>
+            </div>
+          </li>
+          <li> <img src="images/spacer.gif" alt="">
+            <div class="caption banner">
+              <h2>Team Leader:MinYoung
+                And SungHawn, JongWoo, JongHo
+              </h2>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="socials"> <a href="#"></a> <a href="#"></a> <a href="#"></a> <a href="#"></a> </div>
+    </div>
+  </div>
+</div>
+<div id="page2" class="content">
+  <div class="container_12">
+    <div class="grid_12">
+      <div class="slogan">
+        <h3>ScreenShot Program <a onClick="goToByScroll('page3'); return false;" href="#"><span>Services</span></a> for Our <a onClick="goToByScroll('page4'); return false;" href="#"><em>Clients</em></a></h3>
+        <div class="text1"> <a href="#" class="tm_link"> </a> Gui Processing을 함께 탐구한 팀원들을 소개합니다! <br>
+           </div>
+      </div>
+    </div>
+    <div class="grid_3">
+      <div class="box maxheight"> <img src="images/Minyoung_photo.jpg" alt="">
+        <div class="text1"><a href="https://www.instagram.com/inmm0_/">MinYoung</a></div>
+        Team Leader
+        <div class="socials1"> <a href="#"></a> <a href="#"></a> <a href="#"></a> <a href="#"></a> </div>
+      </div>
+    </div>
+    <div class="grid_3">
+      <div class="box maxheight"> <img src="images/SungHawn_photo.jpg" alt="">
+        <div class="text1"><a href="https://www.instagram.com/sung_h06/" target="_blank">SungHawn</a></div>
+        Team member
+        <div class="socials1"> <a href="#"></a> <a href="#"></a> <a href="#"></a> <a href="#"></a> </div>
+      </div>
+    </div>
+    <div class="grid_3">
+      <div class="box maxheight"> <img src="images/JongWoo_photo.jpg" alt="">
+        <div class="text1"><a href="https://www.instagram.com/0349leinad/" target="_blank">JongWoo </a></div>
+        Team member
+        <div class="socials1"> <a href="#"></a> <a href="#"></a> <a href="#"></a> <a href="#"></a> </div>
+      </div>
+    </div>
+    <div class="grid_3">
+      <div class="box maxheight"> <img src="images/JongHo_photo.jpg" alt="">
+        <div class="text1"><a href="https://www.instagram.com/flichick9/" target="_blank">JongHo</a></div>
+        Team member
+        <div class="socials1"> <a href="#"></a> <a href="#"></a> <a href="#"></a> <a href="#"></a> </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="page3" class="content">
+  <div class="container_12">
+    <div class="grid_12">
+      <div class="slogan">
+        <h3>Our Services</h3>
+        <div class="text1"> GUI Processing을 이용한 스크린샷 프로그램을 만듦 그 코드만 있다면 설정해둔 단축키로 어떤 웹에서든 스크린샷을 찍고 원하는 폴더에 저장할수 있는 프로그램을 제공합니다 </div>
+      </div>
+    </div>
+    <div class="grid_3">
+      <div class="box maxheight1"> <img src="images/box1_img1.png" alt="">
+        <div class="text1"><a href="#">Strategy</a></div>
+        윈도우에는 기본적으로 프린트 스크린샷을 제공하지만 윈도우가 아닌 운영체제에서는 스크린샷을 제공하지 않기도 하며, 윈도우에서라도 스크린샷이 불가할때 이 프로그램을 쓰자 </div>
+    </div>
+    <div class="grid_3">
+      <div class="box maxheight1"> <img src="images/box1_img2.png" alt="">
+        <div class="text1"><a href="https://github.com/Inmm0/HAJA_screenshot_program/" target="_blank">Code download Here</a></div>
+        깃허브에 본 코드를 제공, 입맛에 맞게 코드를 변경해 사용하도록 </div>
+    </div>
+    
+    <div class="grid_3">
+      <div class="box maxheight1"> <img src="images/box1_img4.png" alt="">
+        <div class="text1"><a href="https://www.instagram.com/0349leinad/" target="_blank">Questions Here</a></div>
+        스크린샷 프로그램에 관한 문의는 JongWoo 인스타그램 DM으로 </div>
+    </div>
+  </div>
+</div>
+<div id="page4" class="content">
+  <div class="container_12">
+    <div class="grid_12">
+      <h3>The YouTube channel And blog we referenced</h3>
+    </div>
+    <div class="companies">
+      <div class="grid_3"> <img src="images/logo1.png" alt="">
+        <div class="text1">나도 코딩</div>
+        GUI Processing 강좌를 참고함 <br>
+        <a href="https://www.youtube.com/@nadocoding" target="_blank">Go to Site</a> </div>
+      <div class="grid_3"> <img src="images/logo2.png" alt="">
+        <div class="text1">조코딩</div>
+        HTML강좌를 참고함 <br>
+        <a href="https://www.youtube.com/@jocoding" target="_blank">Go to Site</a> </div>
+      <div class="grid_3"> <img src="images/logo3.png" alt="">
+        <div class="text1">Tistory</div>
+        코드를 작성하는데 있어서 오류가 있을때, 많은 도움이됨 <br>
+        <a href="https://www.tistory.com/" target="_blank">Go to Site</a> </div>
+      <div class="grid_3"> <img src="images/logo4.png" alt="">
+        <div class="text1">GitHub</div>
+        홈페이지의 베이스가 되는 코드를 참고함 <br>
+        <a href="https://github.com/" target="_blank">Go to Site</a> </div>
+      
+    </div>
+  </div>
+</div>
+<div id="page5" class="content">
+  <div class="container_12">
+    <div class="grid_12">
+      <div class="slogan">
+        
+  <div class="container_12">
+    <div class="grid_12">
+      <div class="copy"> <a onClick="goToByScroll('page1'); return false;" href="#"><img src="images/footer_logo.png" alt=""></a> &copy; 2024 | <a href="#">Privacy</a> <br>
+        Design by: <a href="https://www.instagram.com/inmm0_/">MinYoung</a> </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</footer>
+</body>
+</html>
